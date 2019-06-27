@@ -4,7 +4,7 @@ import Todo from './Todo'
 class ListTodo extends React.Component {
     render () {
         return (
-            <ul className='ListTodo'>
+            <ul>
                 <Todo />
             </ul>
         )

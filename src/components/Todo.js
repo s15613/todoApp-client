@@ -5,8 +5,8 @@ class Todo extends React.Component {
         return (
             <>
             <li>
-            <i class="fas fa-check-circle mi"></i>
-                <span>dfadf</span>
+            <i class="fas fa-check-circle mi non"></i>
+                <span className="title done">dfadf</span>
                 <span className="close">&#10799;</span>
             </li>
             <li>

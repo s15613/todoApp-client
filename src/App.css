@@ -74,7 +74,7 @@ ul li {
   margin-bottom: 5px;
 }
 ul li:hover {
-  background: #68fd96;
+  background-color: #ecd8d8;
 }
 .close {
   position: absolute;
@@ -92,4 +92,43 @@ ul li:hover {
   left: 0;
   font-size: 24px;
   margin-left: 20px;
+  color: #04040457;
+}
+.non {
+  color: #13984a;
+}
+.footer {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2px;
+  font-size: inherit;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 12px;
+}
+.mo {
+  border: #61dafb solid 1px;
+  padding: 4px 7px 4px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0;
+  margin-left: 25px;
+}
+.itemleft {
+  flex-grow: 1;
+  padding: 0;
+}
+.filter {
+  margin-left: 25px;
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 2;
+}
+.done {
+  color: #d9d9d9;
+  text-decoration: line-through;
 }
