@@ -72,6 +72,8 @@ ul li {
   font-size: 18px;
   transition: 0.2s;
   margin-bottom: 5px;
+  text-align: left;
+  padding-left: 60px;
 }
 ul li:hover {
   background-color: #ecd8d8;
@@ -90,6 +92,7 @@ ul li:hover {
 .mi {
   position: absolute;
   left: 0;
+  bottom: 11.5px;
   font-size: 24px;
   margin-left: 20px;
   color: #04040457;
@@ -104,7 +107,6 @@ ul li:hover {
   font-size: inherit;
   border: 1px solid #e6e6e6;
   display: flex;
-  /* justify-content: flex-start; */
   align-items: center;
   box-sizing: border-box;
   background: #fff;
@@ -117,6 +119,7 @@ ul li:hover {
   cursor: pointer;
   margin: 0;
   margin-left: 25px;
+  border-color: rgba(175, 47, 47, 0.2);
 }
 .itemleft {
   flex-grow: 1;
