@@ -6,14 +6,19 @@ import AddTodo from './components/AddTodo'
 import ListTodo from './components/ListTodo'
 import Footer from './components/Footer'
 
+import { Provider } from 'react-redux'
+import store from './store'
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <AddTodo />
-      <Footer />
-      <ListTodo />
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <AddTodo />
+        <Footer />
+        <ListTodo />
     </div>
+    </Provider>
   );
 }
 
