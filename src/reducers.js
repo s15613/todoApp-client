@@ -30,7 +30,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 todos: state.todos.map(todo => {
-                    if (todo._id ===action.payload._id)
+                    if (todo._id === action.payload._id)
                     return {
                         ...todo,
                         isCompleted: !todo.isCompleted

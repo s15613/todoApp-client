@@ -1,25 +1,34 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { deleteTodo, completeTodo } from '../actions'
 
 class Todo extends React.Component {
+    
+    handleDelete = () => {
+        this.props.deleteTodo(this.props.todo._id)
+    }
+
+    handleComplete = () => {
+        this.props.completeTodo(this.props.todo._id)
+    }
+
     render () {
         const { todo } = this.props
-        console.log(todo)
         return (
-            <>
-            <li>
-                <i className="fas fa-check-circle mi non"></i>
-                <span className="title done">{todo.title}</span>
-                <span className="close">&#10799;</span>
+            <li
+                onClick={this.handleComplete}
+            >
+                <i className={todo.isCompleted ? "fas fa-check-circle mi non" : "fas fa-check-circle mi"}></i>
+                <span className={todo.isCompleted ? "done" : ""}>{todo.title}</span>
+                <span 
+                    className="close"
+                    onClick={this.handleDelete}
+                >
+                    &#10799;           
+                </span>
             </li>
-            {/* <li>
-                <i className="far fa-check-circle mi"></i>
-                <span>Go to Tran Duy Hung Street</span>
-                <span className="close">&#10799;</span>
-            </li> */}
-            </>
-            
         )
     }
 }
 
-export default Todo;
+export default connect(null, { deleteTodo, completeTodo })(Todo);

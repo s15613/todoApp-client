@@ -1,6 +1,5 @@
 import React from 'react';
 import Todo from './Todo'
-import Loading from './Loading'
 
 import { connect } from 'react-redux'
 import { getTodos } from '../actions'
@@ -10,10 +9,9 @@ class ListTodo extends React.Component {
         this.props.getTodos()
     }
     render () {
-        const { loading, todos } = this.props
-        if( loading )
-        return <Loading />    
+        const { loading, todos } = this.props   
         return (
+            loading ? <p>Loading ...</p> :
             <ul>
                 {
                     todos.map(todo => <Todo key={todo._id} todo={todo} />)

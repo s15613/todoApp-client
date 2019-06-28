@@ -5,6 +5,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://todoappofapiserver.herokuapp.com/api/todos'
 
 export const getTodos = () => dispatch => {
+
     dispatch({ type: TYPE.LOADING_TODOS })
 
     axios.get('/')
@@ -15,13 +16,13 @@ export const getTodos = () => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const addTodo = data => dispatch => {
-    axios.post('/', {data})
+export const addTodo = title => dispatch => {
+    axios.post('/', { title })
         .then(res => dispatch({
             type: TYPE.ADD_TODO,
             payload: res.data
         }))
-        .catch(err => console.log(err))
+        .catch(error => console.log(error))
 }
 
 export const deleteTodo = todoId => dispatch => {

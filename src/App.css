@@ -82,7 +82,7 @@ ul li:hover {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 12px 16px 12px 16px;
+  padding: 10px 18px 12px 18px;
 }
 
 .close:hover {
@@ -111,9 +111,10 @@ ul li:hover {
   box-sizing: border-box;
   background: #fff;
   font-size: 12px;
+  justify-content: space-between
 }
 .mo {
-  border: #61dafb solid 1px;
+  text-decoration: none;
   padding: 4px 7px 4px 7px;
   border-radius: 3px;
   cursor: pointer;
@@ -121,15 +122,34 @@ ul li:hover {
   margin-left: 25px;
   border-color: rgba(175, 47, 47, 0.2);
 }
+.mo:focus {
+  border: #61dafb solid 1px;
+  padding: 3px 6px 3px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0;
+  margin-left: 25px;
+  border-color: rgba(175, 47, 47, 0.2);
+  text-decoration: none;
+}
+.mo:hover {
+  border: #61dafb solid 1px;
+  padding: 3px 6px 3px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0;
+  margin-left: 25px;
+  border-color: rgba(175, 47, 47, 0.2);
+  text-decoration: none;
+}
 .itemleft {
-  flex-grow: 1;
   padding: 0;
+  margin-left: 30px
 }
 .filter {
-  margin-left: 25px;
+  margin-right: 90px;
   display: flex;
   justify-content: flex-start;
-  flex-grow: 2;
 }
 .done {
   color: #d9d9d9;
