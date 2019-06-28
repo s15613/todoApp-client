@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 class Footer extends React.Component {
     render () {
@@ -9,30 +8,17 @@ class Footer extends React.Component {
         const count = filteredTodos.length
         const item = count === 1 ? 'item' : 'items'
         return (
-            <Router>
-                {
-                    todos.length !== 0 &&
-                    <div className='footer'>
-                        <p className="itemleft"> {`${count} ${item} left`} </p>
-                        <div className="filter">
-                            <Link 
-                                to='/' 
-                                className="mo"
-                            >   All
-                            </Link>
-                            <Link 
-                                to='/active' 
-                                className="mo"
-                            >
-                                Active
-                            </Link>
-                            <Link to='/completed' className="mo">Completed</Link>  
-                        </div>      
-                    </div>
-                }
-            </Router>
-        )
-    }
+                todos.length !== 0 &&
+                <div className='footer'>
+                    <p className="itemleft"> {`${count} ${item} left`} </p>
+                    <div className="filter">
+                        <p className="mo">All</p>
+                        <p className="mo">Active</p>
+                        <p className="mo">Completed</p>  
+                    </div>      
+                </div>
+    )
+}
 }
 
 const mapStateToProps = (state) => ({

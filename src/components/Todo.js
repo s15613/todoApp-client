@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { deleteTodo, completeTodo } from '../actions'
 
 class Todo extends React.Component {
-    
+
     handleDelete = () => {
         this.props.deleteTodo(this.props.todo._id)
     }
@@ -19,7 +19,7 @@ class Todo extends React.Component {
                 onClick={this.handleComplete}
             >
                 <i className={todo.isCompleted ? "fas fa-check-circle mi non" : "fas fa-check-circle mi"}></i>
-                <span className={todo.isCompleted ? "done" : ""}>{todo.title}</span>
+                <div className={todo.isCompleted ? "title done" : "title"}>{todo.title}</div>
                 <span 
                     className="close"
                     onClick={this.handleDelete}
