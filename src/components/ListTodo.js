@@ -9,20 +9,28 @@ class ListTodo extends React.Component {
         this.props.getTodos()
     }
     render () {
-        const { loading, todos } = this.props   
+        const { loading, todos, filter } = this.props   
+        const filterTodos = todos.filter(todo => {
+            switch (filter) {
+                case 'all': return true
+                case 'active': return todo.isCompleted === false
+                default: return todo.isCompleted === true
+            }
+        })
         return (
             loading ? <p>Loading ...</p> :
             <ul>
                 {
-                    todos.map(todo => <Todo key={todo._id} todo={todo} />)
+                    filterTodos.map(todo => <Todo key={todo._id} todo={todo} />)
                 }
             </ul>
         )
     }
 }
 const mapStateToProps = (state) => ({
-    todos: state.todos,
-    loading: state.loading
+    todos: state.todosReducer.todos,
+    loading: state.todosReducer.loading,
+    filter: state.filterReducer
 })
 
 export default connect(mapStateToProps, { getTodos })(ListTodo);

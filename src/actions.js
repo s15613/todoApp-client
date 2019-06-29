@@ -42,3 +42,18 @@ export const completeTodo = todoId => dispatch => {
         }))
         .catch(err => console.log(err))
 }
+
+export const filterTodo = (filter) => dispatch => {
+    dispatch({
+            type: TYPE.FILTER,
+            payload: filter
+        })
+}
+
+export const clear = () => dispatch => {
+    axios.get('/delete/all')
+        .then(res => dispatch({
+            type: TYPE.CLEAR
+        }))
+        .catch(err => console.log(err))
+}
